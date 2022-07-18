@@ -1,0 +1,31 @@
+<%- include('partials/header')%>
+
+<section class="transaction">
+    <div class="form-container">
+        <form action="/history" method="post">
+
+        <div class="name input">
+            <label for="name_of_person" style="font-weight: bold;">Name of person:</label>
+            <select name="name" id="name_of_person" class="input-form" placeholder="Enter the name of the person">
+                <% people.forEach((item)=>{ %>
+                <option><%= item.name %> </option>
+                <%  }); %>
+            </select>
+        </div>
+
+        <div class="amount input">
+            <label for="amount" style="font-weight: bold;">Amount:</label>
+            <input type="number" name="amount" id="amount" class="input-form" placeholder="Enter the amount">
+        </div>
+
+        <div class="transaction-btns">
+            <button type="submit" class="send-btn">Send Money</button>
+            <a href="/history" class="send-btn">History</a>
+        </div>
+
+    </form>
+    </div>
+    
+</section>
+
+<%- include('partials/footer')%>

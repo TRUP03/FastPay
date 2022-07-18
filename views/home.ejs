@@ -1,0 +1,39 @@
+<%- include('partials/header')%>
+
+<section class="home">
+    <div class="content">
+        <h1>Money Transaction made simple, by <span>FastPay</span></h1>
+        <p>Built for India with all the features and rewards you love, plus much more, Send or receive money with zero
+            fees, straight from your bank account to almost anyone.</p>
+        <li class="explore"><a href="#services">Explore</a></li>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_yzoqyyqf.json" background="transparent" speed="1"
+        style="width: 500px; height: 500px;" loop autoplay class="lot-home"></lottie-player>
+</section>
+<section class="services-container" id="services">
+    <div class="service-heading-container">
+         <h2 id="service-heading">Our Services</h2>
+    </div>
+    <div class="services">
+        
+            <div class="card1" style="width: 18rem; ">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_hgfrqoex.json" speed="0.5"
+                    style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                <h4 class="card-title">Make Transactions</h4>
+                <a href="/transaction" class="card-btn">Transaction</a>
+            </div>
+       
+       
+            <div class="card1" style="width: 18rem; ">
+                <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_em0rbaye.json" speed="1"
+                    style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+                <h4 class="card-title">History</h4>
+                <a href="/history" class="card-btn">History</a>
+            </div>
+       
+    </div>
+
+</section>
+
+<%- include('partials/footer')%>

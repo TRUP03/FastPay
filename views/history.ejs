@@ -1,0 +1,23 @@
+<%- include('partials/header')%>
+
+<div class="table">
+    <table>
+        <tr id="headings">
+            <td>Sr.No</td>
+            <td>Name</td>
+            <td>Amount</td>
+            <td>Activity</td>
+        </tr>
+        <% people.forEach((item)=>{%>
+        <tr>
+            <td>1</td>
+            <td><%= item.name %> </td>
+            <td><%= item.amount %></td>
+            <td><a href="">Delete</a></td>
+        </tr>
+        <% }) %>
+
+    </table>
+</div>
+
+<%- include('partials/footer')%>
