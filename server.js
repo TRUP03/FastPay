@@ -12,13 +12,15 @@ mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/Pe
 
 const peopleSchema = new mongoose.Schema({
     name: "string",
-    amount:"Number"
+    amount:"Number",
+    email:"string"
 });
 const Person = mongoose.model('Person', peopleSchema);
 
 const historySchema = new mongoose.Schema({
     name: "string",
-    amount: "Number"
+    amount: "Number",
+    person_id:"string"
 });
 const History = mongoose.model('History', historySchema);
 
@@ -30,6 +32,16 @@ app.get('/', (req, res) => {
 });
 app.get('/addUser', (req, res) => {
     res.render('user');
+});
+app.get('/customers', (req, res) => {
+    Person.find({},(err,result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.render('customers',{people:result});
+        }
+    });
+  
 });
 app.get('/transaction', (req, res) => {
     Person.find({}, (err, result) => {
@@ -44,26 +56,36 @@ app.get('/transaction', (req, res) => {
 app.post('/history', (req, res) => {
     const name = req.body.name;
     const amount = req.body.amount;
-
+    const person_id = req.body.person_id;
     const his = new History({
         name: name,
-        amount: amount
+        amount: amount,
+        person_id:person_id
     });
-    his.save();
+    his.save();  
+    Person.findOne({person_id:person_id},(err, result)=>{
+        if(err){
+            console.log(err);
+        }else{
+            Person.updateOne({amount:result.amount},{$set: {amount : result.amount + amount}});
+        }
+    });
+    // })
     res.redirect('/history');
 });
 app.post('/addUser', (req, res) => {
     const name = req.body.name;
     const amount = req.body.amount;
-
+    const email = req.body.email;
     const person = new Person({
         name: name,
-        amount: amount
+        amount: amount,
+        email:email
     });
     person.save(()=>{
         console.log("User Added");
     });
-    res.redirect('/');
+    res.redirect('/customers');
 });
 app.get('/history', (req, res) => {
     History.find({}, (err, result) => {

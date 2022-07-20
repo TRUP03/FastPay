@@ -19,7 +19,18 @@
     --grey2:#E1E5EA; --grey1:#A7BBC7;
 
 }
-
+.page-heading{
+    padding-top: 1rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.page-heading h2{
+    background-color: #242F9B;
+    padding: 0.7rem;
+    border-radius: 5px;
+    color: white;
+}
 /* end extra */
 
 /* start header */
@@ -156,15 +167,13 @@ h1 span{
 
 /* Transaction page */
 .transaction{
+    background-image: -webkit-linear-gradient( #b2d5f3, #6bb5f5 );
+}
+.form-container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: -webkit-linear-gradient( #b2d5f3, #6bb5f5 );
-}
-.form-container{
- background-color: #6bb5f5;
- box-shadow: 5px 5px 5px #6b78f0;
 }
 .transaction-form{
     display: flex;
@@ -172,6 +181,8 @@ h1 span{
     border-radius: 6px;
     gap: 2rem;
     padding: 2rem;
+    background-color: #6bb5f5;
+    box-shadow: 5px 5px 5px #6b78f0;
 }
 .input{
     display: flex;
@@ -202,12 +213,14 @@ h1 span{
 
 
 /* start history */
+.history-body{
+    background-image: -webkit-linear-gradient( #b2d5f3, #6bb5f5 );
+}
 .table{
     min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: -webkit-linear-gradient( #b2d5f3, #6bb5f5 );
 }
 table {
     width: 90%;

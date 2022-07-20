@@ -1,0 +1,27 @@
+<%- include('partials/header')%>
+<div class="history-body">
+    <div class="page-heading">
+          <h2>Customers</h2>
+    </div>
+  
+<div class="table">
+    <table>
+        <tr id="headings">
+            <td>Name</td>
+            <td>Email</td>
+            <td>Amount</td>
+        </tr>
+        <% people.forEach((item)=>{%>
+        <tr>
+            <td><%= item.name %> </td>
+            <td><%= item.email %></td>
+            <td><%= item.amount %></td>
+        </tr>
+        </form>
+        <% }) %>
+
+    </table>
+</div>
+</div>
+
+<%- include('partials/footer')%>

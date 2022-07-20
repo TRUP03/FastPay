@@ -1,6 +1,9 @@
 <%- include('partials/header')%>
 
 <section class="transaction">
+    <div class="page-heading">
+        <h2>Transaction</h2>
+  </div>
     <div class="form-container">
      <form action="/history" method="post" class="transaction-form">
 
@@ -8,7 +11,7 @@
             <label for="name_of_person" style="font-weight: bold;">Name of person:</label>
             <select name="name" id="name_of_person" class="input-form" placeholder="Enter the name of the person" required>
                 <% people.forEach((item)=>{ %>
-                <option><%= item.name %> </option>
+                <option><%= item.name %> <input type="hidden" name="person_id" value="<%= item._id %>"></option>
                 <%  }); %>
             </select>
         </div>
