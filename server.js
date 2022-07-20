@@ -11,7 +11,8 @@ mongoose.connect("mongodb+srv://Truptee:Truptee123@cluster0.u3q7n.mongodb.net/Pe
 });
 
 const peopleSchema = new mongoose.Schema({
-    name: "string"
+    name: "string",
+    amount:"Number"
 });
 const Person = mongoose.model('Person', peopleSchema);
 
@@ -26,6 +27,9 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.render('home');
+});
+app.get('/addUser', (req, res) => {
+    res.render('user');
 });
 app.get('/transaction', (req, res) => {
     Person.find({}, (err, result) => {
@@ -48,7 +52,19 @@ app.post('/history', (req, res) => {
     his.save();
     res.redirect('/history');
 });
+app.post('/addUser', (req, res) => {
+    const name = req.body.name;
+    const amount = req.body.amount;
 
+    const person = new Person({
+        name: name,
+        amount: amount
+    });
+    person.save(()=>{
+        console.log("User Added");
+    });
+    res.redirect('/');
+});
 app.get('/history', (req, res) => {
     History.find({}, (err, result) => {
         if (err) console.log(err);
@@ -58,6 +74,19 @@ app.get('/history', (req, res) => {
     });
 
 });
+app.post('/delete/:itemId',(req, res)=>{
+   const id = req.params.itemId;
+    History.findByIdAndDelete({_id:id},(err)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/history');
+            console.log('deleted');
+        }
+    });
+});
+
+
 app.listen(3000, () => {
     console.log("done");
 });

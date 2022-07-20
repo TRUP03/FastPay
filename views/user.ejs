@@ -1,0 +1,23 @@
+<%- include('partials/header')%>
+<section class="transaction">
+    <div class="form-container">
+     <form action="/addUser" method="post" class="transaction-form">
+
+        <div class="name input">
+            <label for="name" style="font-weight: bold;">Name of person:</label>
+            <input type="text" name="name" id="name" class="input-form" placeholder="Enter Name" required>
+        </div>
+
+        <div class="amount input">
+            <label for="amount" style="font-weight: bold;">Amount:</label>
+            <input type="number" name="amount" id="amount" class="input-form" placeholder="Enter the amount" required>
+        </div>
+
+        <div class="transaction-btns">
+            <button type="submit" class="send-btn">Add User</button>
+        </div>
+
+     </form>
+    </div>
+</section>
+<%- include('partials/footer')%>

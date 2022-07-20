@@ -166,7 +166,7 @@ h1 span{
  background-color: #6bb5f5;
  box-shadow: 5px 5px 5px #6b78f0;
 }
-form{
+.transaction-form{
     display: flex;
     flex-direction: column;
     border-radius: 6px;
@@ -226,6 +226,13 @@ td a{
     color: white;
     text-decoration: none;
 }
+.delete-btn{
+    width:4rem;
+    background-color: #242F9B;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
 /* end history */
 
 
@@ -238,6 +245,16 @@ footer {
 
 #2nd{
     padding-left: 3rem;
+}
+.card-header1{
+    background-color:#b2d5f3;
+    box-shadow: 0 3px 5px #83c3fb;
+    padding: 0.8rem;
+    z-index: 100;
+}
+.card-body1{
+    background-image: -webkit-linear-gradient( #b2d5f3, #6bb5f5 );
+    padding: 1rem;
 }
 /* end foogter */
 

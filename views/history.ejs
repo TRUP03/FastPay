@@ -3,18 +3,20 @@
 <div class="table">
     <table>
         <tr id="headings">
-            <td>Sr.No</td>
             <td>Name</td>
             <td>Amount</td>
             <td>Activity</td>
         </tr>
         <% people.forEach((item)=>{%>
+        <form action="/delete/<%= item._id %>" method="post">
         <tr>
-            <td>1</td>
             <td><%= item.name %> </td>
             <td><%= item.amount %></td>
-            <td><a href="">Delete</a></td>
+            <td>
+                <button type="submit" class="delete-btn">Delete</button>
+            </td>
         </tr>
+        </form>
         <% }) %>
 
     </table>

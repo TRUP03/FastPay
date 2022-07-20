@@ -2,11 +2,11 @@
 
 <section class="transaction">
     <div class="form-container">
-        <form action="/history" method="post">
+     <form action="/history" method="post" class="transaction-form">
 
         <div class="name input">
             <label for="name_of_person" style="font-weight: bold;">Name of person:</label>
-            <select name="name" id="name_of_person" class="input-form" placeholder="Enter the name of the person">
+            <select name="name" id="name_of_person" class="input-form" placeholder="Enter the name of the person" required>
                 <% people.forEach((item)=>{ %>
                 <option><%= item.name %> </option>
                 <%  }); %>
@@ -15,7 +15,7 @@
 
         <div class="amount input">
             <label for="amount" style="font-weight: bold;">Amount:</label>
-            <input type="number" name="amount" id="amount" class="input-form" placeholder="Enter the amount">
+            <input type="number" name="amount" id="amount" class="input-form" placeholder="Enter the amount" required>
         </div>
 
         <div class="transaction-btns">
@@ -23,9 +23,8 @@
             <a href="/history" class="send-btn">History</a>
         </div>
 
-    </form>
+     </form>
     </div>
-    
 </section>
 
 <%- include('partials/footer')%>
