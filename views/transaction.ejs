@@ -11,7 +11,7 @@
             <label for="name_of_person" style="font-weight: bold;">Name of person:</label>
             <select name="name" id="name_of_person" class="input-form" placeholder="Enter the name of the person" required>
                 <% people.forEach((item)=>{ %>
-                <option><%= item.name %> <input type="hidden" name="person_id" value="<%= item._id %>"></option>
+                <option><%= item.name %></option>
                 <%  }); %>
             </select>
         </div>

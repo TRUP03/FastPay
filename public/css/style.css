@@ -9,7 +9,6 @@
     outline: none;
     border: none;
     box-sizing: border-box;
-    text-transform: capitalize;
     text-decoration: none;
     transition: all 0.2s ease-out;
 }
@@ -192,6 +191,7 @@ h1 span{
 .input-form{
     border: solid 1px black;
     width: 50vh;
+
     min-height: 2rem;
 }
 
