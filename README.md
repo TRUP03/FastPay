@@ -1,6 +1,14 @@
 # FastPay
+The website which keeps a track of your money trasactions.
 
-Website Link:https://fast-pay-web.herokuapp.com/
+Website Link:https://fastpay.onrender.com/
+
+
+techStack:
+
+Frontend:HTML,CSS,JS
+
+Backkend:Node.js, Express.js, MongoDb
 Home:
 
 ![image](https://user-images.githubusercontent.com/98757259/180072289-61b8bfb9-b61c-45b8-b164-455abdea83e8.png)
